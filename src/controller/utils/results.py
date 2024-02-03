@@ -1,3 +1,5 @@
+from math import floor
+
 from tabulate import tabulate
 
 from src.models.financial_instruments import FinancialInstruments
@@ -38,3 +40,25 @@ def analyze_and_print_results(financial_instruments: FinancialInstruments, new_i
         )
 
     print("Please manually verify the results as Mathematics can only aid you but can't absolve you!")
+
+
+def sanitize_too_small_values(results: list[float], inplace: bool = False) -> list[float]:
+    """Sanitizes and returns the list of results. Supports inplace as well as non in
+    place changes in `results`
+
+    - Takes `math.floor` of values to round off
+
+    Args:
+        results (list[float]): List of results
+
+    Returns:
+        list[float]: Returns a originally modified list if `inplace` is `True` and
+        returns a new list of results after sanitizing
+    """
+    if inplace:
+        for idx in range(len(results)):
+            results[idx] = floor(results[idx])
+
+        return results
+
+    return [floor(result) for result in results]
