@@ -6,6 +6,8 @@
   - [Example](#example)
   - [Mathematics](#mathematics)
   - [How to use?](#how-to-use)
+    - [Using file](#using-file)
+    - [Using Terminal](#using-terminal)
   - [Implementation Details](#implementation-details)
 
 ## Introduction
@@ -38,6 +40,21 @@ allocation % would become:
 
 However, these might not be the most optimal allocation. Our objective here is to find
 the most optimal allocation.
+
+Running the code gives that we should split the amount of $₹30$ equally across all
+instruments:
+
+```bash
+>> python -m src.views.file
+Optimizing the MSE to compute optimal allocation. Sit tight!
+Final allocation of investment of unit 30 is as follows:
+```
+
+| Instrument | Initial<br> <br>Investment<br> <br>% | Target<br> <br>Investment<br> <br>% | Suggested<br> <br>Investment | Final<br> <br>% |
+|------------|--------------------------------------|-------------------------------------|------------------------------|-----------------|
+| INFOSYS    | 30                                   | 33                                  | 10                           | 30.7692         |
+| TCS        | 50                                   | 33                                  | 10                           | 46.1538         |
+| WIPRO      | 20                                   | 34                                  | 10                           | 23.0769         |
 
 ## Mathematics
 
@@ -75,4 +92,45 @@ And, we can minimize this function to find all $N_i$s.
 
 ## How to use?
 
+Right now there are two ways of using the code. But first setup a virtual environment
+and install the requirements using `pip install -r requirements.txt` command. If there's
+an interest and people find it useful, I can build a simple UI for usage.
+
+### Using file
+
+If you wish to easily change values to play around, you can directly modify the file
+`src/views/file.py`. It already contains example values from the `README` file. To run
+the code, run command `python -m src.views.file` from project directory.
+
+### Using Terminal
+
+If you do not wish to temper with any file, simply run code `python -m
+src.views.terminal` and follow the terminal instructions. Example usage given below:
+
+```bash
+>> python -m src.views.terminal
+Please add identifier/names of financial instruments separated by comma(,)
+INFOSYS,TCS,WIPRO
+Please add initial investment (all in same currency) of financial instruments separated by comma(,)
+30,50,20
+How much money do you want to invest?
+30
+Please add target investment ratio (between 0 and 1) of financial instruments separated by comma(,)
+.33,.33,.34
+```
+
 ## Implementation Details
+
+It's a simple program with scary looking but simplistic mathematics behind it as
+explained above. We have used `scipy.optimizers.minimize` function (with `SLSQP` method)
+to minimize the Mean Squared Error function. There are two more methods defined in the
+models viz. `TRUST_CONSTR` and `COBYLA` but they are not supported atm to keep things
+simple and avoid over engineering for a plain use case.
+
+The repository contains three parts:
+
+- `controller`: It contains the core logic of the application.
+- `models`: It contains standard pydantic/enum models used across the code.
+- `views`: It provides interface to end users to interact with the code. Currently there
+  are two interfaces viz. a terminal based `src/views/terminal.py` and a file based
+  `src/views/file.py`.

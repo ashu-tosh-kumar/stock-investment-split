@@ -25,13 +25,13 @@ def analyze_and_print_results(financial_instruments: FinancialInstruments, new_i
             ((100 * instrument.initial_investment) / total_initial_investment),  # Initial Investment Ratio
             100 * instrument.target_investment_ratio,  # Target Investment Ratio
             investment,  # Suggested Investment
-            ((100 * (instrument.initial_investment + investment)) / total_final_investment),  # Final Ratio
+            ((100 * (instrument.initial_investment + investment)) / total_final_investment),  # Final %
         )
         for instrument, investment in zip(financial_instruments.instruments, results)
     ]
 
     print(f"Final allocation of investment of unit {new_investment} is as follows:")
-    print(tabulate(allocation_data, headers=["Instrument", "Initial Investment %", "Target Investment %", "Suggested Investment", "Final Ratio"]))
+    print(tabulate(allocation_data, headers=["Instrument", "Initial Investment %", "Target Investment %", "Suggested Investment", "Final %"]))
 
     total_suggested_allocation: float = sum(results)
     if abs(total_suggested_allocation - new_investment) / (new_investment) > MARGIN_DEVIATION:
