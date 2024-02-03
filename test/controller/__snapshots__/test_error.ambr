@@ -1,0 +1,10 @@
+# serializer version: 1
+# name: TestMeanSquaredError.test_mean_squared_error_returned_callable_should_return_expected_values[example_1]
+  0.00991045364891519
+# ---
+# name: TestMeanSquaredError.test_mean_squared_error_returned_callable_should_return_expected_values[example_2]
+  0.25635797115616277
+# ---
+# name: TestMeanSquaredError.test_mean_squared_error_returned_callable_should_return_expected_values[example_3]
+  0.1121658540585057
+# ---
