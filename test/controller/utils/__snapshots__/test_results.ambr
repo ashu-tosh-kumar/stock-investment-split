@@ -1,0 +1,40 @@
+# serializer version: 1
+# name: TestAnalyzeAndPrintResults.test_analyze_and_print_results_should_print_summary_above_deviation
+  '''
+  Final allocation of investment of unit 30 is as follows:
+  Instrument      Initial Investment %    Target Investment %    Suggested Investment    Final %
+  ------------  ----------------------  ---------------------  ----------------------  ---------
+  INFOSYS                           30                     33                       5    26.9231
+                                    50                     33                       5    42.3077
+                                    20                     34                       5    19.2308
+  Total suggested allocation is of unit 15.0 which is more than 1.0% different than investment amount 30
+  Please manually verify the results as Mathematics can only aid you but can't absolve you!
+  
+  '''
+# ---
+# name: TestAnalyzeAndPrintResults.test_analyze_and_print_results_should_print_summary_below_deviation
+  '''
+  Final allocation of investment of unit 30 is as follows:
+  Instrument      Initial Investment %    Target Investment %    Suggested Investment    Final %
+  ------------  ----------------------  ---------------------  ----------------------  ---------
+  INFOSYS                           30                     33                      10    30.7692
+                                    50                     33                      10    46.1538
+                                    20                     34                      10    23.0769
+  Please manually verify the results as Mathematics can only aid you but can't absolve you!
+  
+  '''
+# ---
+# name: TestSanitizeTooSmallValues.test_sanitize_too_small_values_inplace
+  list([
+    10,
+    9,
+    10,
+  ])
+# ---
+# name: TestSanitizeTooSmallValues.test_sanitize_too_small_values_not_inplace
+  list([
+    10,
+    9,
+    10,
+  ])
+# ---
