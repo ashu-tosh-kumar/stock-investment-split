@@ -5,6 +5,7 @@
   - [Introduction](#introduction)
   - [Example](#example)
   - [Mathematics](#mathematics)
+  - [Assumptions](#assumptions)
   - [How to use?](#how-to-use)
     - [Using file](#using-file)
     - [Using Terminal](#using-terminal)
@@ -17,8 +18,8 @@ each stock out of a basket to achieve a target % allocation for each stock.
 
 ## Example
 
-Let's say you have invested in 3 stocks viz. INFOSYS, TCS and WIPRO. Your initial
-investment in as follows:
+Let's say you have invested in 3 stocks (or any other instruments for that matter) viz.
+INFOSYS, TCS and WIPRO. Your initial investment in as follows:
 
 | Instrument | Initial Investment | Initial Investment % | Target Investment % |
 |------------|--------------------|--------------------------|-------------------------|
@@ -89,6 +90,20 @@ So,
 $MSE = {1 \over n} \sum_{i=1}^n ({(I_i + N_i) \over (SI + SN)} - T_i)^2$
 
 And, we can minimize this function to find all $N_i$s.
+
+## Assumptions
+
+- No selling. The whole point of writing this code is that we don't want to sell any
+  existing instruments to adjust to the target allocation.
+- We assume that we would want to invest whole amount of `new_investment` i.e. if you
+  input $₹30$ as new investment to be allocated, the model would try to allocate the
+  full amount between the instruments.
+- We don't solve for the problem in a rigorous way. The correct way would be create $n$
+  equations for $n$ variables and solve them using some equation solver. However if that
+  were easy, we wouldn't have invented Machine Learning. So, we instead solve the
+  problem by minimizing the MSE between target and actual instrument allocation using a
+  minimizer function (similar to how Gradient Descent would minimize error function in
+  Machine Learning).
 
 ## How to use?
 
