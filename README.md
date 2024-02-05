@@ -89,7 +89,7 @@ use any (bounded and constrained, explained later) optimizing tool to solve the 
 So,
 $MSE = {1 \over n} \sum_{i=1}^n ({(I_i + N_i) \over (SI + SN)} - T_i)^2$
 
-And, we can minimize this function to find all $N_i$s.
+And, we can minimize this function to find all $N_i$.
 
 ## Assumptions
 
