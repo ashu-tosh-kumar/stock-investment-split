@@ -10,6 +10,7 @@
     - [Using file](#using-file)
     - [Using Terminal](#using-terminal)
   - [Implementation Details](#implementation-details)
+  - [Changelog](#changelog)
 
 ## Introduction
 
@@ -108,8 +109,9 @@ And, we can minimize this function to find all $N_i$.
 ## How to use?
 
 Right now there are two ways of using the code. But first setup a virtual environment
-and install the requirements using `pip install -r requirements.txt` command. If there's
-an interest and people find it useful, I can build a simple UI for usage.
+and install the requirements using `pip install poetry` and then, `poetry install`
+command. If there's an interest and people find it useful, I can build a simple UI for
+usage.
 
 ### Using file
 
@@ -149,3 +151,9 @@ The repository contains three parts:
 - `views`: It provides interface to end users to interact with the code. Currently there
   are two interfaces viz. a terminal based `src/views/terminal.py` and a file based
   `src/views/file.py`.
+
+## Changelog
+
+`v.0.1.0`
+
+- first working release.
