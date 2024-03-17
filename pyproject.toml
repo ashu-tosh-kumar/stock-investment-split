@@ -14,8 +14,14 @@ exclude = '''
   | dist
   | migrations
   | venv
+  | \.history
 )/
 '''
+
+[tool.isort]
+profile = "black"
+skip = ["migrations", ".env", "venv", ".local", ".history", ".vscode"]
+skip_glob = ["lib/*"]
 
 [tool.poetry]
 name = "stock-investment-split"
