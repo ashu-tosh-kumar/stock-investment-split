@@ -34,6 +34,7 @@ much should you invest in each of these three stocks?
 
 If we assume that we invest $₹10$ in INFOSYS, $₹5$ in TCS and $₹15$ in WIPRO, then the
 allocation % would become:
+
 | Instrument | Allocation % |
 |------------|------------------|
 | INFOSYS    | 30.7%            |
@@ -157,3 +158,8 @@ The repository contains three parts:
 `v.0.1.0`
 
 - first working release.
+
+`0.1.1`
+
+- package and security upgrades
+- fix code smell per Sonarlint and Snyk
