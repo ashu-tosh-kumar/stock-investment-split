@@ -25,7 +25,7 @@ skip_glob = ["lib/*"]
 
 [tool.poetry]
 name = "stock-investment-split"
-version = "0.1.0"
+version = "0.1.1"
 description = "Calculate how much to invst in each instrument (stock) out of a basket to achieve a target % allocation for each instrument (stock)."
 authors = ["Ashutosh <37182127+ashu-tosh-kumar@users.noreply.github.com>"]
 license = "MIT"
