@@ -8,7 +8,7 @@ SYS_EXIT_ERROR_VALUE: int = 1
 
 if __name__ == "__main__":
     financial_instruments_identifier_msg: str = "Please add identifier/names of financial instruments separated by comma(,)\n"
-    financial_instruments_identifier_list: list[str] = list(map(lambda identifier: identifier.strip(), input(financial_instruments_identifier_msg).split(",")))
+    financial_instruments_identifier_list: list[str] = [identifier.strip() for identifier in input(financial_instruments_identifier_msg).split(",")]
 
     financial_instruments_initial_investment_msg: str = "Please add initial investment (all in same currency) of financial instruments separated by comma(,)\n"
     financial_instruments_initial_investment_list: list[float] = list(map(float, input(financial_instruments_initial_investment_msg).split(",")))
