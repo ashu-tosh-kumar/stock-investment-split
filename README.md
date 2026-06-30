@@ -1,6 +1,12 @@
 
 # stock-investment-split
 
+[![License: MIT](https://img.shields.io/github/license/ashu-tosh-kumar/stock-investment-split?style=flat-square&color=blue)](LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/ashu-tosh-kumar/stock-investment-split/python-app.yml?style=flat-square&label=CI)](https://github.com/ashu-tosh-kumar/stock-investment-split/actions/workflows/python-app.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000?style=flat-square)](https://github.com/psf/black)
+[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ashu-tosh-kumar/stock-investment-split?style=flat-square&label=openssf%20scorecard)](https://scorecard.dev/viewer/?uri=github.com/ashu-tosh-kumar/stock-investment-split)
+<!-- OpenSSF Best Practices: register at https://www.bestpractices.dev/en/projects/new then add: [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/PROJECT_ID/badge)](https://www.bestpractices.dev/projects/PROJECT_ID) -->
+
 - [stock-investment-split](#stock-investment-split)
   - [Introduction](#introduction)
   - [Example](#example)
