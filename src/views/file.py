@@ -35,5 +35,5 @@ if __name__ == "__main__":
     # Create models
     financial_instruments = FinancialInstruments(instruments=financial_instruments_list)
 
-    results: list[float] = run(financial_instruments, new_investment)
-    analyze_and_print_results(financial_instruments, new_investment, results)
+    results, metadata = run(financial_instruments, new_investment, method="both")
+    analyze_and_print_results(financial_instruments, new_investment, results, metadata)

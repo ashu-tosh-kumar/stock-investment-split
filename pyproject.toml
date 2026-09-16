@@ -26,7 +26,7 @@ skip_glob = ["lib/*"]
 [tool.poetry]
 name = "stock-investment-split"
 version = "0.1.1"
-description = "Calculate how much to invst in each instrument (stock) out of a basket to achieve a target % allocation for each instrument (stock)."
+description = "Calculate how much to invest in each instrument (stock) out of a basket to achieve a target % allocation for each instrument (stock)."
 authors = ["Ashutosh <37182127+ashu-tosh-kumar@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
@@ -52,6 +52,8 @@ flake8 = "^7.0.0"
 isort = "^5.13.2"
 pre-commit = "^3.7.0"
 coverage = "^7.6.10"
+pandas = "^2.2.0"
+openpyxl = "^3.1.0"
 
 [build-system]
 requires = ["poetry-core"]

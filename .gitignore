@@ -159,9 +159,11 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# local
+# local\
 .history/
 .local/
+my_stocks.py
+multi_table_data_reader.py
 .python-version
 .vscode/
 .sonarlint/

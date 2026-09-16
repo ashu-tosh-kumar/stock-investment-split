@@ -16,7 +16,7 @@ class TestRun:
         mocker.patch(SANITIZE_TOO_SMALL_VALUES, side_effect=lambda *args, **kwargs: None)
         expected_value = list(dummy_financial_instruments_target_investment_array)
 
-        actual_value = run(DUMMY_FINANCIAL_INSTRUMENTS, dummy_new_investment)
+        actual_value, metadata = run(DUMMY_FINANCIAL_INSTRUMENTS, dummy_new_investment, method="numerical")
 
         assert expected_value == actual_value
 
@@ -26,6 +26,6 @@ class TestRun:
         mocker.patch(SCIPY_OPTIMIZE_MINIMIZE, return_value=dummy_financial_instruments_target_investment_array)
         spy_sanitize_too_small_values = mocker.patch(SANITIZE_TOO_SMALL_VALUES)
 
-        run(DUMMY_FINANCIAL_INSTRUMENTS, dummy_new_investment)
+        run(DUMMY_FINANCIAL_INSTRUMENTS, dummy_new_investment, method="numerical")
 
         spy_sanitize_too_small_values.assert_called_once_with(list(dummy_financial_instruments_target_investment_array), inplace=True)
